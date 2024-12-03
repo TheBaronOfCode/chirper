@@ -1,0 +1,63 @@
+:root {
+    --primary-font: "Inter", serif;
+    --primary-color: white;
+    --background-color: linear-gradient(135deg, #ff7e5f, #feb47b); /* Standard */
+    
+}
+
+body {
+    background: -moz-linear-gradient(135deg, #ff7e5f, #feb47b); /* Firefox */
+    background: -webkit-linear-gradient(135deg, #ff7e5f, #feb47b); /* Chrome, Safari */
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Standard */
+    color: var(--primary-color);
+    font-family: var(--primary-font);
+}
+
+.mainbody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.newchirp {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+.newchirp textarea {
+    font-family: var(--primary-font);
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+.chirpcontrols {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+#charCount {
+    font-size: 14px;
+    color: #665;
+}
+.chirpcontrols button {
+    padding: 8px 16px;
+    background-color: white;
+    color: #333;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    border: none;
+}
+.chirpcontrols button:hover {
+    background-color: #feb47b;
+}
