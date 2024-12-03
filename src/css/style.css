@@ -12,7 +12,15 @@ body {
     color: var(--primary-color);
     font-family: var(--primary-font);
 }
-
+::-moz-selection { /* For Firefox */
+    background-color: black;
+    color: #ffffff;
+  }
+  ::selection { /* For other modern browsers */
+    background-color: black;
+    color: #ffffff;
+  }
+  
 .mainbody {
     display: flex;
     justify-content: center;
@@ -60,4 +68,36 @@ body {
 }
 .chirpcontrols button:hover {
     background-color: #feb47b;
+}
+.chirp-feed {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.chirp-feed h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: grey;
+}
+#chirplist {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.chirp-item {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.chirp-item p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
 }

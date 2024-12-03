@@ -1,22 +1,32 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const chripInput = document.getElementById("chirpInput");
+    const chirpInput = document.getElementById("chirpInput");
     const charCount = document.getElementById("charCount");
-    const chripForm = document.getElementById("chirpForm");
-    
-    // update caracter count on input
-    chripInput.addEventListener("input", function () {
-        const currentLength = chripInput.value.length;
-        charCount.textContent = `${currentLength}/280`;
+    const chirpForm = document.getElementById("chirpForm");
+    const chirpList = document.getElementById("chirpList");
+  
+    // Update character count on input
+    chirpInput.addEventListener("input", function () {
+      const currentLength = chirpInput.value.length;
+      charCount.textContent = `${currentLength}/280`;
     });
-
-    // handle form submission
-    chripForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-        const chirpText = chripInput.value.trim();
-        if (chirpText) {
-            alert(`Chirp Posted: ${chirpText}`);
-            chirpText.value = "";
-            charCount.textContent = "0/280";
-        }
-    })
-})
+  
+    // Handle form submission
+    chirpForm.addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent form from reloading the page
+      const chirpText = chirpInput.value.trim();
+      if (chirpText) {
+        // Create a new chirp element
+        const chirpItem = document.createElement("div");
+        chirpItem.className = "chirp-item";
+        chirpItem.innerHTML = `<p>${chirpText}</p>`;
+  
+        // Add the new chirp to the feed
+        chirpList.prepend(chirpItem);
+  
+        // Clear the input and reset character count
+        chirpInput.value = "";
+        charCount.textContent = "0/280";
+      }
+    });
+  });
+  
